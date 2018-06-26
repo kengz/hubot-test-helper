@@ -7,13 +7,16 @@
     "test-unit": "mocha --compilers coffee:coffee-script/register test",
     "test-integration": "cd dummy && npm i && npm run test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "prepublish": "coffee --compile --output lib/ src/"
+    "prepublish": "coffee --compile --output lib/ src/",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "hubot"
   ],
   "dependencies": {
-    "hubot": ">= 2.6.0 < 3"
+    "hubot": ">= 2.6.0 < 3",
+    "snyk": "^1.85.0"
   },
   "devDependencies": {
     "chai": "latest",
@@ -27,5 +30,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mtsmfm/hubot-test-helper"
-  }
+  },
+  "snyk": true
 }
